@@ -34,16 +34,14 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -steam_dir "${STEAMCMDDIR}" \
                         -steamcmd_script "${HOMEDIR}/${STEAMAPP}_update.txt" \
                         -usercon \
-                        +fps_max "${SRCDS_FPSMAX}" \
-                        -tickrate "${SRCDS_TICKRATE}" \
                         -port "${SRCDS_PORT}" \
-                        +tv_port "${SRCDS_TV_PORT}" \
                         +clientport "${SRCDS_CLIENT_PORT}" \
                         +maxplayers "${SRCDS_MAXPLAYERS}" \
                         +map "${SRCDS_STARTMAP}" \
-                        +sv_setsteamaccount "${SRCDS_TOKEN}" \
-                        +rcon_password "${SRCDS_RCONPW}" \
-                        +sv_password "${SRCDS_PW}" \
-                        +sv_region "${SRCDS_REGION}" \
                         -ip "${SRCDS_IP}" \
-                        -authkey "${SRCDS_WORKSHOP_AUTHKEY}"
+                        -nohltv \
+                        +servercfgfile "${SRCDS_CFG}" \
+                        +mapcycle "${SRCDS_CYCLE}" \
+                        -high \
+                        -num_edicts "4096" \
+                        -strictportbind
