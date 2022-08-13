@@ -82,7 +82,7 @@ services:
    image: "tf2servers:latest"
    restart: unless-stopped
    volumes:
-    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/mvm_joinblu/:/home/steam/tf-dedicated/
     #- /dev/null:/home/steam/Steam
     #- /dev/null:/home/steam/steamcmd
    environment:
