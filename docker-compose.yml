@@ -14,9 +14,18 @@ services:
     - "SRCDS_IP=0"
     - "SRCDS_CFG=mapcycle_default.txt"
     - "SRCDS_CFG=server.cfg"
+    - "SRCDS_MAXPLAYERS=32"
    ports:
     - "27015:27015"
+    - "27015:27015/udp"
     - "27115:27115"
-  network:
-    - "frontend"
-    - "backend"
+   networks:
+    - host
+#    - backend
+
+networks:
+ backend:
+ host:
+#  external:
+#   name: host
+
