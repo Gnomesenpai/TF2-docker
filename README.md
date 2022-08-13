@@ -42,21 +42,16 @@ $ docker run -d -it --net=host --name=tf2-dedicated2 -e SRCDS_PORT=27016 -e SRCD
 
 # Configuration
 ## Environment Variables
-Feel free to overwrite these environment variables, using -e (--env): 
+Feel free to overwrite these environment variables, using -e (--env): (NO DEFAULTS CURRENTLY SET)
 ```dockerfile
-SRCDS_TOKEN="changeme" (value is is required to be listed & reachable, retrieve token here (AppID 440): https://steamcommunity.com/dev/managegameservers)
-SRCDS_RCONPW="changeme" (value can be overwritten by tf/cfg/server.cfg) 
-SRCDS_PW="changeme" (value can be overwritten by tf/cfg/server.cfg) 
 SRCDS_PORT=27015
-SRCDS_TV_PORT=27020
-SRCDS_IP="0" (local ip to bind)
-SRCDS_FPSMAX=300
-SRCDS_TICKRATE=66
-SRCDS_MAXPLAYERS=14
-SRCDS_REGION=3
-SRCDS_STARTMAP="ctf_2fort"
-SRCDS_HOSTNAME="New TF Server" (first launch only)
-SRCDS_WORKSHOP_AUTHKEY="" (required to load workshop maps)
+SRCDS_CLIENT_PORT=
+SRCDS_IP=
+SRCDS_MAXPLAYERS=
+SRCDS_STARTMAP=
+SRCDS_CFG= (server.cfg)
+SRCDS_CYCLE= (mapcycle_<name>.conf)
+
 ```
 ## Config
 The image contains static copies of the competitive config files from [UGC League](https://www.ugcleague.com/files_tf26.cfm#) and [RGL.gg](https://rgl.gg/Public/About/Configs.aspx?r=24). 
