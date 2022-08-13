@@ -57,7 +57,7 @@ services:
    image: "tf2servers:latest"
    restart: unless-stopped
    volumes:
-    - /home/game/tf2servers/mvmx_uu/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/mvm_uu/:/home/steam/tf-dedicated/
     #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
     #- /home/game/tf2servers/steam/steamcmd:/home/steam/steamcmd
    environment:
