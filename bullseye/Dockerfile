@@ -8,7 +8,7 @@ LABEL maintainer="walentinlamonos@gmail.com"
 ENV STEAMAPPID 232250
 ENV STEAMAPP tf
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
-ENV DLURL https://raw.githubusercontent.com/CM2Walki/TF2
+ENV DLURL https://raw.githubusercontent.com/Gnomesenpai/TF2-docker
 
 RUN set -x \
 	# Add i386 architecture
