@@ -17,3 +17,6 @@ services:
    ports:
     - "27015:27015"
     - "27115:27115"
+  network:
+    - "frontend"
+    - "backend"
