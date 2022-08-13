@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+
+  mvmx10_1:
+   container_name: "mvmx10_1"
+   image: "testing:latest"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+   environment:
+    - "SRCDS_PORT=27015"
+    - "SRCDS_CLIENT_PORT=27115"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=0"
+    - "SRCDS_CFG=mapcycle_default.txt"
+    - "SRCDS_CFG=server.cfg"
+   ports:
+    - "27015:27015"
+    - "27115:27115"

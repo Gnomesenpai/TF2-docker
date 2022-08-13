@@ -63,14 +63,14 @@ $ docker exec -it tf2-dedicated nano /home/steam/tf-dedicated/tf/cfg/server.cfg
 If you want to learn more about configuring a TF2 server check this [documentation](https://wiki.teamfortress.com/wiki/Dedicated_server_configuration).
 
 # Image Variants:
-The `tf2` images come in three flavors, each designed for a specific use case.
+The `moevstf2` images come in three flavors, each designed for a specific use case.
 
-## `tf2:latest`
+## `moevstf2:latest`
 This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is a bare-minimum TF2 dedicated server containing no 3rd party plugins.<br/>
 
-## `tf2:metamod`
+## `moevstf2:metamod`
 This is a specialized image. It contains the plugin environment [Metamod:Source](https://www.sourcemm.net) which can be found in the addons directory. You can find additional plugins [here](https://www.sourcemm.net/plugins).
 
-## `tf2:sourcemod`
+## `moevstf2:sourcemod`
 This is another specialized image. It contains both [Metamod:Source](https://www.sourcemm.net) and the popular server plugin [SourceMod](https://www.sourcemod.net) which can be found in the addons directory. [SourceMod](https://www.sourcemod.net) supports a wide variety of additional plugins that can be found [here](https://www.sourcemod.net/plugins.php).
 
