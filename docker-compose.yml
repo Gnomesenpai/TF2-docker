@@ -1,10 +1,10 @@
 version: '3.8'
 services:
 
-#Ghost town x10
-  mvmx10_1:
-   container_name: "mvmx10_1"
-   image: "testing:latest"
+#1 Ghost town x10
+  mvmx_1_x10:
+   container_name: "mvm_1_x10"
+   image: "tf2servers:latest"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
@@ -15,41 +15,118 @@ services:
     - "SRCDS_CLIENT_PORT=27115"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_default.txt"
+    - "SRCDS_CFG=mapcycle_mvm_ghosttown.txt"
     - "SRCDS_CFG=mvmx10_1.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "107.191.46.127:27015:27015"
-    - "107.191.46.127:27015:27015/udp"
-    - "107.191.46.127:27115:27115"
+    - " 136.243.152.116:27015:27015"
+    - " 136.243.152.116:27015:27015/udp"
+    - " 136.243.152.116:27115:27115"
    networks:
     - frontend
     - backend
 
-#Custome Maps x10
-  mvmx10_2:
-   container_name: "mvmx10_2"
-   image: "testing:latest"
+#2 Custome Maps x10
+  mvmx_2_x10:
+   container_name: "mvmx_2_x10_custom_maps"
+   image: "tf2servers:latest"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/steamcmd:/home/steam/steamcmd
+    - /dev/null:/home/steam/Steam
+    - /dev/null:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27016"
     - "SRCDS_CLIENT_PORT=27116"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=0"
+    - "SRCDS_CFG=mapcycle_mvm_custom.txt"
+    - "SRCDS_CFG=mvmx10_2.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - " 136.243.152.116:27016:27016"
+    - " 136.243.152.116:27016:27016/udp"
+    - " 136.243.152.116:27116:27116"
+   networks:
+    - frontend
+    - backend
+
+#3 MvM Uber Upgrades
+  mvm_3_uu:
+   container_name: "mvm_3_uber_upgrades"
+   image: "tf2servers:latest"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx_uu/:/home/steam/tf-dedicated/
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/steamcmd:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27017"
+    - "SRCDS_CLIENT_PORT=27117"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=0"
+    - "SRCDS_CFG=mapcycle_mvm_default.txt"
+    - "SRCDS_CFG=mvmx10_2.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - " 136.243.152.116:27017:27017"
+    - " 136.243.152.116:27017:27017/udp"
+    - " 136.243.152.116:27117:27117"
+   networks:
+    - frontend
+    - backend
+
+#4 MvM Vanilla and Custom Maps
+  mvm_4_vanilla:
+   container_name: "mvm_4_vanilla"
+   image: "tf2servers:latest"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    #- /dev/null:/home/steam/Steam
+    #- /dev/null:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27018"
+    - "SRCDS_CLIENT_PORT=27118"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
     - "SRCDS_CFG=mapcycle_default.txt"
     - "SRCDS_CFG=mvmx10_2.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "107.191.46.127:27016:27016"
-    - "107.191.46.127:27016:27016/udp"
-    - "107.191.46.127:27116:27116"
+    - " 136.243.152.116:27018:27018"
+    - " 136.243.152.116:27018:27018/udp"
+    - " 136.243.152.116:27118:27118"
    networks:
     - frontend
     - backend
+
+#5 Vanilla maps x10 - updated by mvm_1_x10
+  mvm_5_x10_vanilla:
+   container_name: "mvmx10_5_vanilla"
+   image: "tf2servers:latest"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /dev/null:/home/steam/Steam
+    - /dev/null:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27019"
+    - "SRCDS_CLIENT_PORT=27119"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=0"
+    - "SRCDS_CFG=mapcycle_default.txt"
+    - "SRCDS_CFG=mvmx10_1.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - " 136.243.152.116:27019:27019"
+    - " 136.243.152.116:27019:27019/udp"
+    - " 136.243.152.116:27119:27119"
+   networks:
+    - frontend
+    - backend
+
+
 networks:
  backend:
   name: backend
