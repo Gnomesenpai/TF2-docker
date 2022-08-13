@@ -8,48 +8,50 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2server/steam/steamcmd:/home/steam/steamcmd
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/steamcmd:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27015"
     - "SRCDS_CLIENT_PORT=27115"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
     - "SRCDS_CFG=mapcycle_default.txt"
-    - "SRCDS_CFG=server.cfg"
+    - "SRCDS_CFG=mvmx10_1.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "27015:27015"
-    - "27015:27015/udp"
-    - "27115:27115"
+    - "107.191.46.127:27015:27015"
+    - "107.191.46.127:27015:27015/udp"
+    - "107.191.46.127:27115:27115"
    networks:
     - frontend
     - backend
 
 #Custome Maps x10
-#  mvmx10_2:
-#   container_name: "mvmx10_2"
-#   image: "testing:latest"
-#   restart: unless-stopped
-#   volumes:
-#    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-#    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-#    - /home/game/tf2server/steam/steamcmd:/home/steam/steamcmd
-#   environment:
-#    - "SRCDS_PORT=27016"
-#    - "SRCDS_CLIENT_PORT=27116"
-#    - "SRCDS_STARTMAP=mvm_ghost_town"
-#    - "SRCDS_IP=0"
-#    - "SRCDS_CFG=mapcycle_default.txt"
-#    - "SRCDS_CFG=server.cfg"
-#    - "SRCDS_MAXPLAYERS=32"
-#   ports:
-#    - "27016:27016"
-#    - "27016:27016/udp"
-#    - "27116:27116"
-#   networks:
-#    - frontend
-#    - backend
+  mvmx10_2:
+   container_name: "mvmx10_2"
+   image: "testing:latest"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/steamcmd:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27016"
+    - "SRCDS_CLIENT_PORT=27116"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=0"
+    - "SRCDS_CFG=mapcycle_default.txt"
+    - "SRCDS_CFG=mvmx10_2.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "107.191.46.127:27016:27016"
+    - "107.191.46.127:27016:27016/udp"
+    - "107.191.46.127:27116:27116"
+   networks:
+    - frontend
+    - backend
 networks:
  backend:
+  name: backend
  frontend:
+  name: frontend
