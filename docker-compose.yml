@@ -126,7 +126,7 @@ services:
     - frontend
     - backend
 networks:
- backend:
-  name: backend
  frontend:
-  name: frontend
+  external: true
+ backend:
+  external: true
