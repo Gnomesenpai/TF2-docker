@@ -15,7 +15,7 @@ services:
     - "SRCDS_CLIENT_PORT=27115"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_mvm_ghosttown.txt"
+    - "SRCDS_CYCLE=mapcycle_mvm_ghosttown.txt"
     - "SRCDS_CFG=mvmx10_1.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
@@ -40,7 +40,7 @@ services:
     - "SRCDS_CLIENT_PORT=27116"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_mvm_custom.txt"
+    - "SRCDS_CYCLE=mapcycle_mvm_custom.txt"
     - "SRCDS_CFG=mvmx10_2.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
@@ -65,7 +65,7 @@ services:
     - "SRCDS_CLIENT_PORT=27117"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_mvm_default.txt "
+    - "SRCDS_CYCLE=mapcycle_mvm_default.txt"
     - "SRCDS_CFG=mvmx10_3.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
@@ -90,7 +90,7 @@ services:
     - "SRCDS_CLIENT_PORT=27118"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_cus_and_vanilla.txt"
+    - "SRCDS_CYCLE=mapcycle_cus_and_vanilla.txt"
     - "SRCDS_CFG=mvmx10_4.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
@@ -115,7 +115,7 @@ services:
     - "SRCDS_CLIENT_PORT=27119"
     - "SRCDS_STARTMAP=mvm_ghost_town"
     - "SRCDS_IP=0"
-    - "SRCDS_CFG=mapcycle_mvm_default.txt"
+    - "SRCDS_CYCLE=mapcycle_mvm_default.txt"
     - "SRCDS_CFG=mvmx10_5.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
