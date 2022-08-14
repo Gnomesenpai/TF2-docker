@@ -27,13 +27,13 @@ if  [ ! -z "$SOURCEMOD_VERSION" ] && [ ! -d "${STEAMAPPDIR}/${STEAMAPP}/addons/s
         wget -qO- https://sm.alliedmods.net/smdrop/"${SOURCEMOD_VERSION}"/"${LATESTSM}" | tar xvzf - -C "${STEAMAPPDIR}/${STEAMAPP}"
 fi
 
+#                        -usercon \
 # Believe it or not, if you don't do this srcds_run shits itself
 cd "${STEAMAPPDIR}"
 
 bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -steam_dir "${STEAMCMDDIR}" \
                         -steamcmd_script "${HOMEDIR}/${STEAMAPP}_update.txt" \
-                        -usercon \
                         -port "${SRCDS_PORT}" \
                         +clientport "${SRCDS_CLIENT_PORT}" \
                         +maxplayers "${SRCDS_MAXPLAYERS}" \
