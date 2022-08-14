@@ -4,7 +4,7 @@ services:
 #1 Ghost town x10
   mvmx_1_x10:
    container_name: "mvm_1_x10"
-   image: "tf2servers:stable"
+   image: "tf2servers:randommap"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
@@ -14,22 +14,23 @@ services:
     - "SRCDS_PORT=27015"
     - "SRCDS_CLIENT_PORT=27115"
     - "SRCDS_STARTMAP=mvm_ghost_town"
-    - "SRCDS_IP=0"
+    - "SRCDS_IP=136.243.152.116"
     - "SRCDS_CYCLE=mapcycle_mvm_ghosttown.txt"
     - "SRCDS_CFG=mvmx10_1.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "136.243.152.116:27015:27015"
-    - "136.243.152.116:27015:27015/udp"
-    - "136.243.152.116:27115:27115"
-   networks:
-    - frontend
-    - backend
+    - "27015:27015"
+    - "27015:27015/udp"
+    - "27115:27115"
+   network_mode: "host"
+#   networks:
+#    - frontend
+#    - backend
 
 #2 Custome Maps x10
   mvmx_2_x10:
    container_name: "mvm_2_x10_custom_maps"
-   image: "tf2servers:stable"
+   image: "tf2servers:randommap"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
@@ -39,22 +40,23 @@ services:
     - "SRCDS_PORT=27016"
     - "SRCDS_CLIENT_PORT=27116"
     - "SRCDS_STARTMAP=mvm_ghost_town"
-    - "SRCDS_IP=0"
+    - "SRCDS_IP=136.243.152.116"
     - "SRCDS_CYCLE=mapcycle_mvm_custom.txt"
     - "SRCDS_CFG=mvmx10_2.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "136.243.152.116:27016:27016"
-    - "136.243.152.116:27016:27016/udp"
-    - "136.243.152.116:27116:27116"
-   networks:
-    - frontend
-    - backend
+    - "27016:27016"
+    - "27016:27016/udp"
+    - "27116:27116"
+   network_mode: "host"
+#   networks:
+#    - frontend
+#    - backend
 
 #3 MvM Uber Upgrades
   mvm_3_uu:
    container_name: "mvm_3_uber_upgrades"
-   image: "tf2servers:stable"
+   image: "tf2servers:randommap"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_uu/:/home/steam/tf-dedicated/
@@ -64,22 +66,23 @@ services:
     - "SRCDS_PORT=27017"
     - "SRCDS_CLIENT_PORT=27117"
     - "SRCDS_STARTMAP=mvm_ghost_town"
-    - "SRCDS_IP=0"
+    - "SRCDS_IP=136.243.152.116"
     - "SRCDS_CYCLE=mapcycle_mvm_default.txt"
     - "SRCDS_CFG=mvmx10_3.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "136.243.152.116:27017:27017"
-    - "136.243.152.116:27017:27017/udp"
-    - "136.243.152.116:27117:27117"
-   networks:
-    - frontend
-    - backend
+    - "27017:27017"
+    - "27017:27017/udp"
+    - "27117:27117"
+   network_mode: "host"
+#   networks:
+#    - frontend
+#    - backend
 
 #4 MvM Vanilla and Custom Maps
   mvm_4_vanilla:
    container_name: "mvm_4_vanilla"
-   image: "tf2servers:stable"
+   image: "tf2servers:randommap"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_joinblu/:/home/steam/tf-dedicated/
@@ -89,22 +92,23 @@ services:
     - "SRCDS_PORT=27018"
     - "SRCDS_CLIENT_PORT=27118"
     - "SRCDS_STARTMAP=mvm_ghost_town"
-    - "SRCDS_IP=0"
+    - "SRCDS_IP=136.243.152.116"
     - "SRCDS_CYCLE=mapcycle_cus_and_vanilla.txt"
     - "SRCDS_CFG=mvmx10_4.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "136.243.152.116:27018:27018"
-    - "136.243.152.116:27018:27018/udp"
-    - "136.243.152.116:27118:27118"
-   networks:
-    - frontend
-    - backend
+    - "27018:27018"
+    - "27018:27018/udp"
+    - "27118:27118"
+   network_mode: "host"
+#   networks:
+#    - frontend
+#    - backend
 
 #5 Vanilla maps x10 - updated by mvm_1_x10
   mvm_5_x10_vanilla:
    container_name: "mvm_5_vanilla_x10"
-   image: "tf2servers:stable"
+   image: "tf2servers:randommap"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
@@ -124,7 +128,7 @@ services:
     - "136.243.152.116:27119:27119"
    networks:
     - frontend
-    - backend
+   # - backend
 networks:
  frontend:
   external: true
