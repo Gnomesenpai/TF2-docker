@@ -37,11 +37,11 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -port "${SRCDS_PORT}" \
                         +clientport "${SRCDS_CLIENT_PORT}" \
                         +maxplayers "${SRCDS_MAXPLAYERS}" \
-                        +map "${SRCDS_STARTMAP}" \
                         -ip "${SRCDS_IP}" \
                         -nohltv \
                         +servercfgfile "${SRCDS_CFG}" \
-                        +mapcycle "${SRCDS_CYCLE}" \
+                        +mapcyclefile "${SRCDS_CYCLE}" \
                         -high \
+                        +randommap \
                         -num_edicts "4096" \
                         -strictportbind
