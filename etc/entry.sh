@@ -40,7 +40,7 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -ip "${SRCDS_IP}" \
                         -nohltv \
                         +servercfgfile "${SRCDS_CFG}" \
-                        +mapcyclefile "${SRCDS_CYCLE}" \
+                        +mapcyclefile ${SRCDS_CYCLE} \
                         -high \
                         +randommap \
                         -num_edicts "4096" \
