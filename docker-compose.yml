@@ -27,7 +27,7 @@ services:
 #    - frontend
 #    - backend
 
-#2 Custome Maps x10
+#2 Custome Maps x10 - updated by mvm_1_x10
   mvmx_2_x10:
    container_name: "mvm_2_x10_custom_maps"
    image: "tf2servers:randommap"
@@ -53,7 +53,7 @@ services:
 #    - frontend
 #    - backend
 
-#3 MvM Uber Upgrades
+#3 MvM Uber Upgrades - solo server in directory
   mvm_3_uu:
    container_name: "mvm_3_uber_upgrades"
    image: "tf2servers:randommap"
@@ -79,7 +79,7 @@ services:
 #    - frontend
 #    - backend
 
-#4 MvM Vanilla and Custom Maps
+#4 MvM Vanilla and Custom Maps - solo server in directory
   mvm_4_vanilla:
    container_name: "mvm_4_vanilla"
    image: "tf2servers:randommap"
@@ -118,19 +118,299 @@ services:
     - "SRCDS_PORT=27019"
     - "SRCDS_CLIENT_PORT=27119"
     - "SRCDS_STARTMAP=mvm_ghost_town"
-    - "SRCDS_IP=0"
+    - "SRCDS_IP=136.243.152.116"
     - "SRCDS_CYCLE=mapcycle_mvm_default.txt"
     - "SRCDS_CFG=mvmx10_5.cfg"
     - "SRCDS_MAXPLAYERS=32"
    ports:
-    - "136.243.152.116:27019:27019"
-    - "136.243.152.116:27019:27019/udp"
-    - "136.243.152.116:27119:27119"
-   networks:
-    - frontend
+    - "27019:27019"
+    - "27019:27019/udp"
+    - "27119:27119"
+   network_mode: "host"
+
+# Stop That Tank - solo server in directory
+  mvm_6_stt:
+   container_name: "mvm_6_stt"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/stop_that_tank/:/home/steam/tf-dedicated/
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27020"
+    - "SRCDS_CLIENT_PORT=27120"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_stopthattank.txt"
+    - "SRCDS_CFG=mvmx10_6.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27020:27020"
+    - "27020:27020/udp"
+    - "27120:27120"
+   network_mode: "host"
+   #networks:
+   # - frontend
    # - backend
-networks:
- frontend:
-  external: true
- backend:
-  external: true
+
+# Machine Attacks - solo server in directory
+  mvm_7_machine_attacks:
+   container_name: "mvm_7_machine_attacks"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/machine_attacks/:/home/steam/tf-dedicated/
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27021"
+    - "SRCDS_CLIENT_PORT=27121"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_machine_attacks.txt"
+    - "SRCDS_CFG=mvmx10_7_machine_attacks.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27021:27021"
+    - "27021:27021/udp"
+    - "27121:27121"
+   network_mode: "host"
+   #networks:
+   # - frontend
+   # - backend  
+  
+#8 Vanilla maps x50 - updated by mvm_1_x10
+  mvm_8_x50_vanilla:
+   container_name: "mvm_8_vanilla_x50"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27022"
+    - "SRCDS_CLIENT_PORT=27122"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_default.txt"
+    - "SRCDS_CFG=mvmx10_8.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27022:27022"
+    - "27022:27022/udp"
+    - "27122:27122"
+   network_mode: "host"
+
+#9 Vanilla maps divide by 10 - updated by mvm_1_x10
+  mvm_9_divide_by_x10:
+   container_name: "mvm_9_divide_by_x10"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27023"
+    - "SRCDS_CLIENT_PORT=27123"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_all.txt"
+    - "SRCDS_CFG=mvmx10_9.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27023:27023"
+    - "27023:27023/udp"
+    - "27123:27123"
+   network_mode: "host"
+
+#10 beta maps - first server in directory
+  tf2_betamaps:
+   container_name: "tf2_betamaps"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27024"
+    - "SRCDS_CLIENT_PORT=27124"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_beta_maps.txt"
+    - "SRCDS_CFG=tf2_betamaps_1.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27024:27024"
+    - "27024:27024/udp"
+    - "27124:27124"
+   network_mode: "host"
+
+#11 Adventures of 30wave - solo server in directory
+  mvm_adventuresof30:
+   container_name: "mvm_adventuresof30"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_ao3/:/home/steam/tf-dedicated/
+    #- /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    #- /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27025"
+    - "SRCDS_CLIENT_PORT=27125"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_adventure_of_30wave.txt"
+    - "SRCDS_CFG=mvm_ma_2.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27025:27025"
+    - "27025:27025/udp"
+    - "27125:27125"
+   network_mode: "host"
+
+#12 Stock Rotation - updated by tf2_betamaps
+  tf2_stockrotation:
+   container_name: "tf2_stockrotation"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27026"
+    - "SRCDS_CLIENT_PORT=27126"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_default.txt"
+    - "SRCDS_CFG=stockrotation_1.cfg"
+    - "SRCDS_MAXPLAYERS=24"
+   ports:
+    - "27026:27026"
+    - "27026:27026/udp"
+    - "27126:27126"
+   network_mode: "host"
+
+#13 fun maps - updated by tf2_betamaps
+  tf2_funmaps:
+   container_name: "tf2_funmaps"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27027"
+    - "SRCDS_CLIENT_PORT=27127"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_meme_map.txt"
+    - "SRCDS_CFG=randomizerx10_1.cfg"
+    - "SRCDS_MAXPLAYERS=24"
+   ports:
+    - "27027:27027"
+    - "27027:27027/udp"
+    - "27127:27127"
+   network_mode: "host"
+
+#14 NOT IN USE
+#  tf2_stockrotation:
+#   container_name: "tf2_stockrotation"
+#   image: "tf2servers:randommap"
+#   restart: unless-stopped
+#   volumes:
+#    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+#    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+#    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+#   environment:
+#    - "SRCDS_PORT=27028"
+#    - "SRCDS_CLIENT_PORT=27128"
+#    - "SRCDS_STARTMAP=mvm_ghost_town"
+#    - "SRCDS_IP=136.243.152.116"
+#    - "SRCDS_CYCLE=mapcycle_meme_map.txt"
+#    - "SRCDS_CFG=randomizerx10_1.cfg"
+#    - "SRCDS_MAXPLAYERS=24"
+#   ports:
+#    - "27028:27028"
+#    - "27028:27028/udp"
+#    - "27128:27128"
+#   network_mode: "host"
+
+#15 Orange - updated by tf2_betamaps
+  tf2_orange:
+   container_name: "tf2_orange"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27029"
+    - "SRCDS_CLIENT_PORT=27129"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_orange.txt"
+    - "SRCDS_CFG=orange.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27029:27029"
+    - "27029:27029/udp"
+    - "27129:27129"
+   network_mode: "host"
+
+#16 Vanilla maps x100 - updated by mvm_1_x10
+  mvm_16_x100_vanilla:
+   container_name: "mvm_16_vanilla_x100"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27030"
+    - "SRCDS_CLIENT_PORT=27130"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_all.txt"
+    - "SRCDS_CFG=mvmx100_1.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27030:27030"
+    - "27030:27030/udp"
+    - "27130:27130"
+   network_mode: "host"
+
+#17 Vanilla maps x20 - updated by mvm_1_x10
+  mvm_17_x20_vanilla:
+   container_name: "mvm_17_vanilla_x20"
+   image: "tf2servers:randommap"
+   restart: unless-stopped
+   volumes:
+    - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
+    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   environment:
+    - "SRCDS_PORT=27031"
+    - "SRCDS_CLIENT_PORT=27131"
+    - "SRCDS_STARTMAP=mvm_ghost_town"
+    - "SRCDS_IP=136.243.152.116"
+    - "SRCDS_CYCLE=mapcycle_mvm_all.txt"
+    - "SRCDS_CFG=mvmx20_1.cfg"
+    - "SRCDS_MAXPLAYERS=32"
+   ports:
+    - "27031:27031"
+    - "27031:27031/udp"
+    - "27131:27131"
+   network_mode: "host"
+ #network:
+# frontend:
+#  external: true
+# backend:
+#  external: true
