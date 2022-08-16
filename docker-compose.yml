@@ -4,7 +4,7 @@ services:
 #1 Ghost town x10
   mvmx_1_x10:
    container_name: "mvm_1_x10"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
@@ -34,8 +34,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+  #  - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+  #  - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27016"
     - "SRCDS_CLIENT_PORT=27116"
@@ -56,7 +56,7 @@ services:
 #3 MvM Uber Upgrades - solo server in directory
   mvm_3_uu:
    container_name: "mvm_3_uber_upgrades"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_uu/:/home/steam/tf-dedicated/
@@ -82,7 +82,7 @@ services:
 #4 MvM Vanilla and Custom Maps - solo server in directory
   mvm_4_vanilla:
    container_name: "mvm_4_vanilla"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_joinblu/:/home/steam/tf-dedicated/
@@ -112,8 +112,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27019"
     - "SRCDS_CLIENT_PORT=27119"
@@ -131,7 +131,7 @@ services:
 # Stop That Tank - solo server in directory
   mvm_6_stt:
    container_name: "mvm_6_stt"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/stop_that_tank/:/home/steam/tf-dedicated/
@@ -157,7 +157,7 @@ services:
 # Machine Attacks - solo server in directory
   mvm_7_machine_attacks:
    container_name: "mvm_7_machine_attacks"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/machine_attacks/:/home/steam/tf-dedicated/
@@ -178,8 +178,8 @@ services:
    network_mode: "host"
    #networks:
    # - frontend
-   # - backend  
-  
+   # - backend
+
 #8 Vanilla maps x50 - updated by mvm_1_x10
   mvm_8_x50_vanilla:
    container_name: "mvm_8_vanilla_x50"
@@ -187,8 +187,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27022"
     - "SRCDS_CLIENT_PORT=27122"
@@ -210,8 +210,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27023"
     - "SRCDS_CLIENT_PORT=27123"
@@ -229,7 +229,7 @@ services:
 #10 beta maps - first server in directory
   tf2_betamaps:
    container_name: "tf2_betamaps"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
@@ -252,7 +252,7 @@ services:
 #11 Adventures of 30wave - solo server in directory
   mvm_adventuresof30:
    container_name: "mvm_adventuresof30"
-   image: "tf2servers:randommap"
+   image: "tf2servers:validate"
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_ao3/:/home/steam/tf-dedicated/
@@ -279,8 +279,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27026"
     - "SRCDS_CLIENT_PORT=27126"
@@ -302,8 +302,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27027"
     - "SRCDS_CLIENT_PORT=27127"
@@ -348,8 +348,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvm_nox10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+#    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+#    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27029"
     - "SRCDS_CLIENT_PORT=27129"
@@ -371,8 +371,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27030"
     - "SRCDS_CLIENT_PORT=27130"
@@ -394,8 +394,8 @@ services:
    restart: unless-stopped
    volumes:
     - /home/game/tf2servers/mvmx10/:/home/steam/tf-dedicated/
-    - /home/game/tf2servers/steam/Steam:/home/steam/Steam
-    - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
+   # - /home/game/tf2servers/steam/Steam:/home/steam/Steam
+   # - /home/game/tf2servers/steam/Steam:/home/steam/steamcmd
    environment:
     - "SRCDS_PORT=27031"
     - "SRCDS_CLIENT_PORT=27131"
