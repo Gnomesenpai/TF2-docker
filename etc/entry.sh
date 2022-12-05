@@ -43,5 +43,6 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         +mapcyclefile ${SRCDS_CYCLE} \
                         -high \
                         +randommap \
+			-usercon \
                         -num_edicts "4096" \
                         -strictportbind
