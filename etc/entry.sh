@@ -41,6 +41,7 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -nohltv \
                         +servercfgfile "${SRCDS_CFG}" \
                         +mapcyclefile ${SRCDS_CYCLE} \
+			+map "${SRCDS_STARTMAP}" \
                         -high \
                         +randommap \
 			-usercon \
