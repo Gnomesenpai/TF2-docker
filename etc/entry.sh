@@ -36,7 +36,7 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         -steamcmd_script "${HOMEDIR}/${STEAMAPP}_update.txt" \
                         -port "${SRCDS_PORT}" \
                         +clientport "${SRCDS_CLIENT_PORT}" \
-                        +maxplayers "${SRCDS_MAXPLAYERS}" \
+                        -maxplayers "${SRCDS_MAXPLAYERS}" \
                         -ip "${SRCDS_IP}" \
                         -nohltv \
 			-unrestricted_maxplayers \
