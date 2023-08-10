@@ -39,6 +39,7 @@ bash "${STEAMAPPDIR}/srcds_run" -game "${STEAMAPP}" -console -autoupdate \
                         +maxplayers "${SRCDS_MAXPLAYERS}" \
                         -ip "${SRCDS_IP}" \
                         -nohltv \
+			-unrestricted_maxplayers \
                         +servercfgfile "${SRCDS_CFG}" \
                         +mapcyclefile ${SRCDS_CYCLE} \
 			+map "${SRCDS_STARTMAP}" \
